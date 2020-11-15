@@ -23,8 +23,10 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Site::index');
 $routes->get('/home', 'Site::view/home');
-$routes->get('/client', 'Site::client');
-$routes->get('/product', 'Site::product');
+$routes->get('/client', 'Client::index');
+$routes->get('/client/(:num)', 'Client::details/$1');
+$routes->get('/product', 'Product::index');
+$routes->get('/product/(:num)', 'Product::details/$1');
 
 /**
  * 

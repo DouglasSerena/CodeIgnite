@@ -2,11 +2,11 @@
 
 use CodeIgniter\Model;
 
-class Products extends Model
+class ClientsModel extends Model
 {
 
-  protected $table = 'products';
-  protected $primaryKey = 'idProduct';
+  protected $table = 'clients';
+  protected $primaryKey = 'idClient';
 
   protected $useTimestamps = false;
 

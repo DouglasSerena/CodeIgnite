@@ -26,4 +26,12 @@ class BaseController extends Controller
 		// $this->session = \Config\Services::session();
 	}
 
+	public function view(string $page, $data = [], string $title = '') {
+		$data['title'] = ucfirst(!$title ? $page : $title);
+
+		echo view('header', $data);
+		echo view("pages/{$page}", $data);
+		echo view('footer', $data);
+	}
+
 }

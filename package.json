@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "gulp connect-sync"
+  },
   "dependencies": {
     "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
