@@ -1,8 +1,14 @@
 </main>
-
-
 <footer id="footer" class="bg-dark">
-  <a href="/ULBRA_FACUDADE/WEB/admin/?control=main&action=index">Area de administração</a>
+  <?php if($admin): ?>
+    <a href="<?= base_url('/') ?>">
+      Voltar ao site
+    </a>
+  <?php else: ?>
+    <a href="<?= base_url('/admin') ?>">
+      Area de administração
+    </a>
+  <?php endif ?>
 </footer>
 </body>
 

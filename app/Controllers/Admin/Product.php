@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
+use App\Controllers\BaseController;
 use App\Models\ProductsModel;
 
 class Product extends BaseController
 {
+  protected $verifySession = true;
+  
 	public function index() {
 		$productsModel = new ProductsModel();
 

@@ -10,10 +10,23 @@ class ClientsModel extends Model
 
   protected $useTimestamps = false;
 
-  function  index() {
+  function index() {
     return $this->findAll();
   }
-  function  getById(int $id) {
+  function store($client) {
+    return $this
+      ->protect(false)
+      ->insert($client);
+  }
+  function updated(int $id, $client) {
+    return $this
+      ->protect(false)
+      ->update($id, $client);
+  }
+  function getById(int $id) {
     return $this->find($id);
+  }
+  function remove(int $id) {
+    return $this->delete($id);
   }
 }

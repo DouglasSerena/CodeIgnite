@@ -88,9 +88,6 @@
 .nav-bar ul li a i {
   margin-right: 5px;
 }
-.nav-bar ul li a::before {
-  content: '- ';
-}
 .menu-admin {
   color: #333;
 }

@@ -23,11 +23,82 @@
     <button id="menu" onclick=""><i class="ri-menu-line"></i></button>
   </header>
 
+  <?php if($admin): ?>
   <aside id="aside" class="bg-secondary">
     <ul class="nav-bar">
-      <li><a href="<?= base_url('home') ?>"><i class="ri-home-line"></i>Home</a></li>
-      <li><a href="<?= base_url('product') ?>"><i class="ri-shopping-cart-2-line"></i>Products</a></li>
-      <li><a href="<?= base_url('client') ?>"><i class="ri-user-line"></i>Client</a></li>
+      <li>
+        <a href="<?= base_url('admin') ?>">
+          <i class="ri-home-line"></i>Home
+        </a>
+      </li>
+      <li>
+        <a href="<?= base_url('admin/client') ?>">
+          <i class="ri-user-line"></i>Client
+        </a>
+      </li>
+      <ul>
+        <li>
+          <a href="<?= base_url('admin/client/register') ?>">
+            <i class="ri-user-add-line"></i>add
+          </a>
+        </li>
+      </ul>
+      <!-- <li>
+        <a href="<?= base_url('admin/product') ?>">
+          <i class="ri-shopping-cart-2-line"></i>Product
+        </a>
+      </li>
+      <ul>
+        <li>
+          <a href="<?= base_url('admin/product/register') ?>">
+           <i class="ri-add-line"></i>add
+          </a>
+        </li>
+      </ul> -->
+      <li>
+        <a href="<?= base_url('admin/logout') ?>">
+          <i class="ri-logout-circle-line"></i>Logout
+        </a>
+      </li>
     </ul>
   </aside>
+  <?php else: ?>
+  <aside id="aside" class="bg-secondary">
+    <ul class="nav-bar">
+      <li>
+        <a href="<?= base_url('home') ?>">
+          <i class="ri-home-line"></i>Home
+        </a>
+      </li>
+      <li>
+        <a href="<?= base_url('product') ?>">
+          <i class="ri-shopping-cart-2-line"></i>Products
+        </a>
+      </li>
+      <li>
+        <a href="<?= base_url('client') ?>">
+          <i class="ri-user-line"></i>Client
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <?php endif; ?>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const aside = document.getElementById('aside');
+    const main = document.getElementById('main');
+
+    menu.onclick = () => {
+      aside.classList.toggle('open');
+      main.classList.toggle('open');
+    }
+    main.onclick = () => {
+      if (main.classList.contains('open')) {
+        aside.classList.remove('open');
+        main.classList.remove('open');
+      }
+    }
+  </script>
+  
   <main id="main" class="bg-light">

@@ -15,7 +15,10 @@
           <td><?= $client['name'] ?></td>
           <td><?= $client['email'] ?></td>
           <td class="text-center">
-            <a class="btn btn-primary" href="<?= base_url("client/{$client['idClient']}") ?>">
+            <a
+              class="btn btn-primary"
+              href="<?= base_url("client/{$client['idClient']}") ?>"
+            >
               Details
             </a>
           </td>

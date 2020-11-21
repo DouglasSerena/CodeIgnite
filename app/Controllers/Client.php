@@ -7,16 +7,16 @@ use App\Models\ClientsModel;
 class Client extends BaseController
 {
 	public function index() {
-		$clients = new ClientsModel();
+		$clientsModel = new ClientsModel();
 
-		$data["clients"] = $clients->index();
+		$data["clients"] = $clientsModel->index();
 		return $this->view('clients/index', $data, "List Client");
 	}
 
 	public function details(int $id) {
-		$client = new ClientsModel();
+		$clientModel = new ClientsModel();
 
-		$data["client"] = $client->getById($id);
+		$data["client"] = $clientModel->getById($id);
 
 		return $this->view('clients/details', $data, 'Details Client');
 	}
