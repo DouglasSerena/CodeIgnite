@@ -64,4 +64,7 @@
     >
   </div> -->
   <button class="btn btn-primary w-100">Update</button>
+  <a href="<?= base_url('/admin/client') ?>" class="btn btn-warning w-100 mt-2">
+    Back
+  </a>
 </form>

@@ -1,4 +1,4 @@
-<table class="table table-borderless">
+<table class="table table-hover table-borderless table-mobile">
   <thead>
     <tr>
       <th>#</th>
@@ -13,22 +13,20 @@
     <?php if (!!$clients) : ?>
       <?php foreach ($clients as $client) : ?>
         <tr class="border-top">
-          <th><?= $client['idClient'] ?></th>
-          <td><?= $client['name'] ?></td>
-          <td><?= $client['phone'] ?></td>
-          <td><?= $client['email'] ?></td>
-          <td><?= $client['address'] ?></td>
-          <td>
-            <a
-              href="<?= base_url("admin/client/update/{$client['idClient']}") ?>"
-              class="btn btn-warning"
-            >
+          <td data-title="#"><?= $client['idClient'] ?></td>
+          <td data-title="Name"><?= $client['name'] ?></td>
+          <td data-title="Email"><?= $client['email'] ?></td>
+          <td data-title="Phone"><?= $client['phone'] ?></td>
+          <td data-title="Address"><?= $client['address'] ?></td>
+          <td data-title="Actions" class="center">
+            <a href="
+               <?= base_url("admin/client/update/{$client['idClient']}") ?>
+              " class="btn btn-warning mr-3">
               <i class="ri-pencil-line"></i>
             </a>
-            <a
-              href="<?= base_url("admin/client/delete/{$client['idClient']}") ?>"
-              class="btn btn-danger"
-            >
+            <a href="
+                <?= base_url("admin/client/delete/{$client['idClient']}") ?>
+              " class="btn btn-danger">
               <i class="ri-delete-bin-2-line"></i>
             </a>
           </td>

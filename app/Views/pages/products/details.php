@@ -17,3 +17,4 @@
     <td class="w-100"><?= $product['description'] ?></td>
   </tr>
 </table>
+<a href="<?= base_url('product') ?>" class="btn btn-warning w-100">Back</a>

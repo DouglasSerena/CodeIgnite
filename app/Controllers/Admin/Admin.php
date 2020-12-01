@@ -14,6 +14,6 @@ class Admin extends BaseController
       $this->login();
   }
   public function login() {
-    return $this->view('admin/login', [], "Login", true);
+    return $this->view('admin/login', [], "Login");
   }
 }

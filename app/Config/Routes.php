@@ -1,10 +1,11 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 $routes = Services::routes();
 
-if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
-{
-	require SYSTEMPATH . 'Config/Routes.php';
+if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
+  require SYSTEMPATH . 'Config/Routes.php';
 }
 
 
@@ -29,13 +30,13 @@ $routes->get('/product', 'Product::index');
 $routes->get('/product/(:num)', 'Product::details/$1');
 
 // ROUTER ADMIN
-$routes->group('admin', function($admin) {
-  $admin->get('/', 'Admin\Admin::index');
+$routes->get('/admin', 'Admin\Admin::index');
+$routes->group('admin', function ($admin) {
   $admin->add('login', 'Admin\Users::login');
   $admin->add('logout', 'Admin\Users::logout');
   // CLIENT
-  $admin->group('client', function($client) {
-    $client->get('/', 'Admin\Client::index');
+  $admin->get('/client', 'Admin\Client::index');
+  $admin->group('client', function ($client) {
     $client->get('register', 'Admin\Client::store');
     $client->post('register', 'Admin\Client::storeAction');
     $client->get('update/(:num)', 'Admin\Client::update/$1');
@@ -43,8 +44,8 @@ $routes->group('admin', function($admin) {
     $client->get('delete/(:num)', 'Admin\Client::delete/$1');
   });
   // PRODUCT
-  $admin->group('product', function($product) {
-    $product->get('/', 'Admin\Product::index');
+  $admin->get('/product', 'Admin\Product::index');
+  $admin->group('product', function ($product) {
     $product->get('register', 'Admin\Product::store');
     $product->add('register', 'Admin\Product::storeAction');
     $product->get('update/(:num)', 'Admin\Product::update/$1');
@@ -52,7 +53,6 @@ $routes->group('admin', function($admin) {
   });
 });
 
-if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
-{
-	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
+  require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

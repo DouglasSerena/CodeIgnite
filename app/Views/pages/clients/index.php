@@ -1,4 +1,4 @@
-<table class="table table-borderless">
+<table class="table table-borderless table-mobile">
   <thead>
     <tr>
       <th>#</th>
@@ -11,14 +11,11 @@
     <?php if ($clients) : ?>
       <?php foreach ($clients as $client) : ?>
         <tr class="border-top">
-          <th class="text-center"><?= $client['idClient'] ?></th>
-          <td><?= $client['name'] ?></td>
-          <td><?= $client['email'] ?></td>
-          <td class="text-center">
-            <a
-              class="btn btn-primary"
-              href="<?= base_url("client/{$client['idClient']}") ?>"
-            >
+          <td data-title="#"><?= $client['idClient'] ?></td>
+          <td data-title="Name"><?= $client['name'] ?></td>
+          <td data-title="Email"><?= $client['email'] ?></td>
+          <td data-title="Action">
+            <a class="btn btn-primary" href="<?= base_url("client/{$client['idClient']}") ?>">
               Details
             </a>
           </td>
