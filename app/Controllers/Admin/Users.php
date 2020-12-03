@@ -7,14 +7,15 @@ use App\Models\UsersModel;
 
 class Users extends BaseController
 {
-  public function login() {
+  public function login()
+  {
     $userModel = new UsersModel();
-    
+
     $userName = $this->request->getVar('user');
     $userPassword = $this->request->getVar('password');
 
-    if($user = $userModel->getUser($userName))
-      if($userPassword == $user['password']) {
+    if ($user = $userModel->getUser($userName))
+      if ($userPassword == $user['password']) {
         $session = \Config\Services::session();
         $session->set('user', [
           'name' => $user['name'],
@@ -24,9 +25,10 @@ class Users extends BaseController
     return redirect()->to(base_url('/admin'));
   }
 
-  public function logout() {
+  public function logout()
+  {
     $session = \Config\Services::session();
     $session->remove('user');
-    return redirect()->to(base_url('/'));
+    return redirect()->to(base_url('/home'));
   }
 }

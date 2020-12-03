@@ -23,6 +23,14 @@
       </div>
     </div>
   </a>
+  <a href="<?= base_url('/admin/product') ?>" class="p-2 col-lg-3 menu-admin">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Product Add</h5>
+        <i class="ri-add-line text-card h1"></i>
+      </div>
+    </div>
+  </a>
   <a href="<?= base_url('/admin/product/register') ?>" class="p-2 col-lg-3 menu-admin">
     <div class="card text-center">
       <div class="card-body">

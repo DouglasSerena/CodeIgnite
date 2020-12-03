@@ -134,3 +134,20 @@ body {
     white-space: nowrap;
   }
 }
+
+.search {
+  display: flex;
+  align-items: center;
+}
+.search .btn {
+  height: 38px;
+  border: 1px solid #ced4da;
+  border-right: none;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.search .form-control {
+  border-left: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}

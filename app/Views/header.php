@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="<?= base_url('/css/remix/remixicon.css') ?>">
   <link rel="stylesheet" href="<?= base_url('/css/main.css') ?>">
 
+  <script src="<?= base_url('/services/simple-mask-money.js'); ?>"></script>
+
   <title>PAGE | <?= $title ?></title>
 </head>
 
@@ -47,18 +49,18 @@
             </a>
           </li>
         </ul>
-        <!-- <li>
-        <a href="<?= base_url('admin/product') ?>">
-          <i class="ri-shopping-cart-2-line"></i>Product
-        </a>
-      </li>
-      <ul>
         <li>
-          <a href="<?= base_url('admin/product/register') ?>">
-           <i class="ri-add-line"></i>add
+          <a href="<?= base_url('admin/product') ?>">
+            <i class="ri-shopping-cart-2-line"></i>Product
           </a>
         </li>
-      </ul> -->
+        <ul>
+          <li>
+            <a href="<?= base_url('admin/product/register') ?>">
+              <i class="ri-add-line"></i>add
+            </a>
+          </li>
+        </ul>
         <li>
           <a href="<?= base_url('admin/logout') ?>">
             <i class="ri-logout-circle-line"></i>Logout

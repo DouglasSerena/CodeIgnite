@@ -13,9 +13,17 @@ class Client extends BaseController
       return redirect()->to(base_url("/admin"));
     }
 
-    $clientsModel = new ClientsModel();
+    $params = $this->request->getVar();
 
-    $data["clients"] = $clientsModel->index();
+    $clientsModel = new ClientsModel();
+    $data = [];
+
+    if (isset($params['filter'])) {
+      $data["clients"] = $clientsModel->filter($params['filter']);
+    } else {
+      $data["clients"] = $clientsModel->index();
+    }
+
     return $this->view('admin/client/index', $data, "List Client", true);
   }
 

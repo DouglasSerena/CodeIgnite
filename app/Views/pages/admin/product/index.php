@@ -1,4 +1,4 @@
-<form action="<?php base_url('admin/client') ?>" method="GET" class="search">
+<form action="<?php base_url('admin/product') ?>" method="GET" class="search">
   <div class="btn btn-light">
     <i class="ri-search-line"></i>
   </div>
@@ -9,29 +9,27 @@
     <tr>
       <th>#</th>
       <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>Actions</th>
+      <th>price</th>
+      <th>description</th>
+      <th class="text-center">Action</th>
     </tr>
   </thead>
   <tbody>
-    <?php if (!empty($clients)) : ?>
-      <?php foreach ($clients as $client) : ?>
+    <?php if (!empty($products)) : ?>
+      <?php foreach ($products as $product) : ?>
         <tr class="border-top">
-          <td data-title="#"><?= $client->idClient ?></td>
-          <td data-title="Name"><?= $client->name ?></td>
-          <td data-title="Email"><?= $client->email ?></td>
-          <td data-title="Phone"><?= $client->phone ?></td>
-          <td data-title="Address"><?= $client->address ?></td>
-          <td data-title="Actions" class="center">
+          <td data-title="#"><?= $product->idProduct ?></td>
+          <td data-title="Name"><?= $product->name ?></td>
+          <td data-title="Price"><?= $product->price ?></td>
+          <td data-title="Description"><?= $product->description ?></td>
+          <td data-title="Actions" class="text-center">
             <a href="
-               <?= base_url("admin/client/update/{$client->idClient}") ?>
+               <?= base_url("admin/product/update/{$product->idProduct}") ?>
               " class="btn btn-warning mr-3">
               <i class="ri-pencil-line"></i>
             </a>
             <a href="
-                <?= base_url("admin/client/delete/{$client->idClient}") ?>
+                <?= base_url("admin/product/delete/{$product->idProduct}") ?>
               " class="btn btn-danger">
               <i class="ri-delete-bin-2-line"></i>
             </a>

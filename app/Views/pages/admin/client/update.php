@@ -1,70 +1,31 @@
-<form
-  action="<?= base_url("admin/client/update/{$client['idClient']}") ?>"
-  method="POST"
-  enctype="multipart/form-data"
->
+<form action="<?= base_url("admin/client/update/{$client->idClient}") ?>" method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label for="id">Id</label>
-    <input
-      value="<?= $client['idClient'] ?>"
-      class="form-control"
-      type="text"
-      id="id"
-      readonly="readonly"
-      disabled
-    >
+    <input value="<?= $client->idClient ?>" class="form-control" type="text" id="id" readonly="readonly" disabled>
   </div>
   <div class="form-group">
     <label for="name">Name</label>
-    <input
-      value="<?= $client['name'] ?>"
-      class="form-control"
-      type="text"
-      name="name"
-      id="name"
-    >
+    <input data-type="name" value="<?= $client->name ?>" required class="form-control" type="text" name="name" id="name">
+    <div class="invalid-feedback"></div>
   </div>
   <div class="form-group">
     <label for="email">E-mail</label>
-    <input
-      value="<?= $client['email'] ?>"
-      class="form-control"
-      type="email"
-      name="email"
-      id="email"
-    >
+    <input data-type="email" required value="<?= $client->email ?>" class="form-control" type="email" name="email" id="email">
+    <div class="invalid-feedback"></div>
   </div>
   <div class="form-group">
     <label for="phone">Phone</label>
-    <input
-      value="<?= $client['phone'] ?>"
-      class="form-control"
-      type="tel"
-      name="phone"
-      id="phone"
-    >
+    <input data-type="phone" required value="<?= $client->phone ?>" class="form-control" type="tel" name="phone" id="phone">
+    <div class="invalid-feedback"></div>
   </div>
   <div class="form-group">
     <label for="address">Address</label>
-    <input
-      value="<?= $client['address'] ?>"
-      class="form-control"
-      type="text"
-      name="address"
-      id="address"
-    >
+    <input data-type="all" required maxlength="30" value="<?= $client->address ?>" class="form-control" type="text" name="address" id="address">
+    <div class="invalid-feedback"></div>
   </div>
-  <!-- <div class="form-group">
-    <label for="photo">Avatar</label>
-    <input
-      class="form-control"
-      type="file"
-      name="photo"
-      id="photo"
-    >
-  </div> -->
   <button class="btn btn-primary w-100">Update</button>
   <a href="<?= base_url('/admin/client') ?>" class="btn btn-warning w-100 mt-2">
     Back
   </a>
 </form>
+<script type="module" src="<?= base_url('/services/app.js') ?>"></script>

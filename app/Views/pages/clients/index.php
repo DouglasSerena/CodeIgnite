@@ -8,14 +8,14 @@
     </tr>
   </thead>
   <tbody>
-    <?php if ($clients) : ?>
+    <?php if (!empty($clients)) : ?>
       <?php foreach ($clients as $client) : ?>
         <tr class="border-top">
-          <td data-title="#"><?= $client['idClient'] ?></td>
-          <td data-title="Name"><?= $client['name'] ?></td>
-          <td data-title="Email"><?= $client['email'] ?></td>
+          <td data-title="#"><?= $client->idClient ?></td>
+          <td data-title="Name"><?= $client->name ?></td>
+          <td data-title="Email"><?= $client->email ?></td>
           <td data-title="Action">
-            <a class="btn btn-primary" href="<?= base_url("client/{$client['idClient']}") ?>">
+            <a class="btn btn-primary" href="<?= base_url("client/{$client->idClient}") ?>">
               Details
             </a>
           </td>
@@ -23,10 +23,7 @@
       <?php endforeach; ?>
     <?php else : ?>
       <tr>
-        <th><i class="ri-more-fill"></i></th>
-        <th><i class="ri-more-fill"></i></th>
-        <th><i class="ri-more-fill"></i></th>
-        <td><i class="ri-more-fill"></i></td>
+        <th colspan="4" class="text-center text-muted">Sem Resultado</th>
       </tr>
     <?php endif; ?>
   </tbody>
